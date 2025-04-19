@@ -16,9 +16,10 @@
   </div>
 
   <div class="col-12 col-sm-6">
-    <h3>Listado</h3>
+    <h3>Listado de personajes poderosos</h3>
     <ul class="list-group">
       @for ( character of characters(); track character.id; let i = $index ){
+      @if(character.power > 1000){
 
       <li class="list-group-item">
         <span>{{ i + 1 }} - {{ character.name }}</span>
@@ -29,7 +30,12 @@
           ({{ character.power }})
         </strong>
       </li>
-      }
+      } @else {
+      <li class="list-group-item">
+        <span>{{ i + 1 }} - </span>
+        <strong>No hay personaje poderoso aquí</strong>
+      </li>
+      } }
     </ul>
   </div>
   <!-- <div class="col-12 col-sm-6">
