@@ -1,5 +1,5 @@
 import { UpperCasePipe } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-hero-page',
@@ -10,10 +10,8 @@ import { Component, signal } from '@angular/core';
 export default class HeroPageComponent {
   name = signal<string>('Ironman');
   age = signal<number>(45);
-
-  getHeroDescription() {
-    return `${this.name()} - ${this.age()}`;
-  }
+  description = computed(() => `${this.name()} - ${this.age()}`);
+  // capitalizedName = computed(() => this.name().toUpperCase());
 
   changeHero() {
     this.name.set('Spiderman');

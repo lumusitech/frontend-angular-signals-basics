@@ -8,10 +8,14 @@
   <dd>{{ age() }}</dd>
 
   <td>Descripción:</td>
-  <dd>{{ getHeroDescription() }}</dd>
+  <dd>{{ description() }}</dd>
 
   <td>Capitalizado:</td>
+  <!-- with computed signal -->
+  <!-- <dd>{{ capitalizedName() }}</dd> -->
+  <!-- Better with pipe -->
   <dd>{{ name() | uppercase }}</dd>
+  <dd></dd>
 </dl>
 
 <button (click)="changeHero()" class="mx-2 btn btn-primary">
