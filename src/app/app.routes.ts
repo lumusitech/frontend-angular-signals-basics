@@ -6,6 +6,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/counter/counter.component'),
   },
   {
+    path: 'hero',
+    loadComponent: () => import('./pages/hero-page/hero-page.component'),
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full',
