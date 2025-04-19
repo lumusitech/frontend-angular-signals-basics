@@ -1,0 +1,42 @@
+<h1>Dragonball Page</h1>
+<hr />
+
+<section class="row">
+  <div class="col-12 col-sm-6">
+    <h3>Agregar:</h3>
+    <input class="form-control" type="text" name="name" placeholder="Nombre" />
+    <input
+      class="mt-2 form-control"
+      type="number"
+      name="name"
+      placeholder="Poder"
+    />
+
+    <button class="mt-2 btn btn-primary">Agregar</button>
+  </div>
+
+  <div class="col-12 col-sm-6">
+    <h3>Listado</h3>
+    <ul class="list-group">
+      @for (
+        character of characters();
+        track character.id;
+        let i = $index;
+        let e = $even;
+        let o = $odd;
+        let f = $first;
+        let l = $last
+      ){
+
+        <li class="list-group-item">
+          <span>{{ i }} - {{ character.name }}</span>
+          <strong class="text-danger"> ({{ character.power }}) </strong>
+          <strong class="text-info"> - Par: {{ e }} </strong>
+          <strong class="text-primary"> - Impar: {{ o }} </strong>
+          <strong class="text-secondary"> - Primero: {{ f }} </strong>
+          <strong class="text-success"> - Último: {{ l }} </strong>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
