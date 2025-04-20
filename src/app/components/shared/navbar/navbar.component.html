@@ -33,9 +33,15 @@
     >hero</a
   >
   <a
-    routerLinkActive="active"
+    [routerLinkActive]="'active'"
     [routerLinkActiveOptions]="{ exact: true }"
     [routerLink]="['/dragonball']"
     >dragonball</a
+  >
+  <a
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="['/dragonball-super']"
+    >dragonball super</a
   >
 </nav>
