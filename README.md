@@ -25,3 +25,25 @@ This repository contains an approach to Angular 19+ using signals. It is a simpl
 - LinkedSignal
 - HashRouter
 - Despliegues
+
+## Location Strategy - Hash
+
+Esto es usado para hacer que las rutas se carguen a partir del root del dominio en lugar de la raíz de la aplicación angular o de sus rutas hijas. Si no se configura así, al hacer reload en una ruta manejada por angular, no se encontrarán las urls.
+
+```ts
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy,
+      // Con esto, logramos:
+      // https://your-domain.com/#/
+      // https://your-domain.com/#/dragonball
+      // https://your-domain.com/#/dragonball-super
+    },
+  ],
+};
+```
