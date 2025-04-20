@@ -1,0 +1,26 @@
+<div (keyup.enter)="addCharacter()">
+  <h3>Agregar: {{ name() }}</h3>
+  <input
+    class="form-control"
+    type="text"
+    name="name"
+    placeholder="Nombre"
+    [value]="name()"
+    (change)="name.set(inputName.value)"
+    #inputName
+  />
+
+  <input
+    class="mt-2 form-control"
+    type="number"
+    name="power"
+    placeholder="Poder"
+    [value]="power()"
+    (change)="power.set(inputPower.valueAsNumber)"
+    #inputPower
+  />
+
+  <button (click)="addCharacter()" type="button" class="mt-2 btn btn-primary">
+    Agregar
+  </button>
+</div>
